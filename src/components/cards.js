@@ -1,4 +1,16 @@
+import { useState } from 'react'
+
 function CardsPopulate({ name, companyCode, logo, users, quizzes, background, key }) {
+  const [counter, setcounter] = useState(0)
+  const [counter1, setcounter1] = useState(0)
+  
+  function handleClick (){
+    setcounter(counter + 1)
+  }
+
+  function handleClick1 (){
+    setcounter1(counter1 + 1)
+  }
   return (
     <div className="main">
       <div className="container-cards">
@@ -14,10 +26,10 @@ function CardsPopulate({ name, companyCode, logo, users, quizzes, background, ke
             <p className='card-text'>{companyCode}</p>
           </div>
           <div class="resources--center_buttons">
-            <p class="counter_positive" id="countPositive3">0</p>
-            <button class="resources_button" id="buttonIncrese3">👍</button>
-            <p class="counter_negative" id="countNegative3">0</p>
-            <button class="resources_button" id="buttonNegative3">👎</button>
+            <p class="counter_positive" id="countPositive3">{counter}</p>
+            <button class="resources_button" id="buttonIncrese3" onClick={handleClick}>👍</button>
+            <p class="counter_negative" id="countNegative3">{counter1}</p>
+            <button class="resources_button" id="buttonNegative3" onClick={handleClick1}>👎</button>
           </div>
         </div>
       </div>
